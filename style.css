@@ -12,8 +12,8 @@
 :root{
     --bg-color: #FFE1FF;
     --snd-bg-color: #D8BFD8;
-    --text-color: #4F4F4F;
-    --main-color: #000000	;
+    --text-color: #363636;
+    --main-color: #000000;
 }
 
 html{
@@ -86,6 +86,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 @keyframes floatImage {
@@ -120,11 +121,24 @@ span{
 .home-content h1{
     font-size: 6rem;
     font-weight: 700;
-    line-height: 1.3;
+    background: linear-gradient(90deg, #000000, #8B008B);
+    -webkit-background-clip: text;
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
 }
 
 .home-content p{
     font-size: 1.6rem;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .social-media a{
@@ -315,7 +329,7 @@ span{
     bottom: 0;
     width: 100%;
     padding: 40px 0;
-    background-color: var(--bg-coloror);  
+    background-color: var(--bg-color);  
 }
 
 .footer .social{
@@ -376,32 +390,6 @@ span{
     .footer{
         padding: 2rem 3%;
     }
-}
-
-@media (max-width: 991px){
-    #menu-icon{
-        display: block;
-    }
-    .navbar{
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        width: 255px;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: var(--main-color);
-        transition: all 0.5s ease;
-        backdrop-filter: blur(10px);
-    }
-    .navbar a{
-        display: block;
-        padding: 17px;
-        font-size: 22px;
-    }
-    .navbar.active{
-        right: 0;
-    }
     .home{
         flex-direction: column;
     }
@@ -432,9 +420,6 @@ span{
         width: 70vw;
         margin-top: 4rem;
     }
-}
-
-@media (max-width: 617px){
     html{
         font-size: 50%;
     }
